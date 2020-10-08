@@ -1,0 +1,407 @@
+/**
+
+  [ robot-lung ]
+  Adapted by Simon Schug
+  A hot pink theme for Reveal.js with Roboto fonts and a colorful border.
+  By Josh Dzielak, https://dzello.com/, License MIT
+
+  The bold border is optional and requires some HTML. To use it:
+
+  1. Add 4 divs to your HTML page:
+    <div class="line top"></div>
+    <div class="line bottom"></div>
+    <div class="line left"></div>
+    <div class="line right"></div>
+
+  2. Set { margin: 0.2 } in the Reveal.js initializer to make sure
+  your presentation content doesn't collide with the frame.
+
+  Like the theme but don't like the colors? Don't fret. Just change
+  $borderColor and/or $linkColor below to something else and rebuild.
+
+  Or if you don't want to rebuild the theme just override the .line background
+  property with some CSS:
+
+  .line {
+    background: <new-color>;
+  }
+
+*/
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,700,800);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:500);
+section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+  color: #141414; }
+
+.reveal blockquote {
+  text-align: left;
+  font-size: 0.9em;
+  color: #000;
+  width: 90% !important;
+  margin: 0px auto;
+  padding-top: 0px !important;
+  padding-right: 10px !important;
+  padding-bottom: 0px !important;
+  padding-left: 20px !important;
+  font-style: normal !important;
+  background: #7BAB8B !important; }
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none;
+  /* CUSTOMIZED */
+  padding: 2px;
+  color: #7BAB8B;
+  background: rgba(21, 21, 21, 0.8); }
+
+.reveal pre code {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  padding: 20px !important; }
+
+/* Create a box around iframes */
+.reveal iframe {
+  border: 4px solid #7BAB8B;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal .controls {
+  right: 50px;
+  bottom: 50px; }
+
+.reveal table {
+  padding-top: 20px; }
+
+.reveal table th,
+.reveal table td {
+  background-color: #7BAB8B;
+  font-size: 0.7em; }
+
+.reveal textarea {
+  color: #000;
+  font-family: monospace;
+  font-size: 0.7em;
+  margin: 30px auto; }
+
+.line {
+  content: '';
+  position: fixed;
+  background: #7BAB8B;
+  z-index: 105; }
+  .line.top {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 10px; }
+    @media (max-width: 840px) {
+      .line.top {
+        height: 15px; } }
+  .line.bottom {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 10px; }
+    @media (max-width: 840px) {
+      .line.bottom {
+        height: 15px; } }
+  .line.left {
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 200%; }
+    @media (max-width: 840px) {
+      .line.left {
+        width: 15px; } }
+  .line.right {
+    left: auto;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 200%; }
+    @media (max-width: 840px) {
+      .line.right {
+        width: 15px; } }
+
+.reveal.has-dark-background .line {
+  display: none; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+  --background-color: #fff;
+  --main-font: Nunito Sans, serif;
+  --main-font-size: 30px;
+  --main-color: #0f0f0f;
+  --block-margin: 20px;
+  --heading-margin: 0 0 20px 0;
+  --heading-font: Nunito Sans, sans-serif;
+  --heading-color: #2a2a2a;
+  --heading-line-height: 1.2;
+  --heading-letter-spacing: normal;
+  --heading-text-transform: none;
+  --heading-text-shadow: none;
+  --heading-font-weight: 800;
+  --heading1-text-shadow: none;
+  --heading1-size: 2.6em;
+  --heading2-size: 2.2em;
+  --heading3-size: 1.7em;
+  --heading4-size: 1.4em;
+  --code-font: Fira Code, monospace;
+  --link-color: #7BAB8B;
+  --link-color-hover: #aac9b4;
+  --selection-background-color: #c9ddcf;
+  --selection-color: #fff; }
+
+.reveal-viewport {
+  background: #fff;
+  background-color: #fff; }
+
+.reveal {
+  font-family: "Nunito Sans", serif;
+  font-size: 30px;
+  font-weight: normal;
+  color: #0f0f0f; }
+
+.reveal ::selection {
+  color: #fff;
+  background: #c9ddcf;
+  text-shadow: none; }
+
+.reveal ::-moz-selection {
+  color: #fff;
+  background: #c9ddcf;
+  text-shadow: none; }
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #2a2a2a;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+.reveal h1 {
+  font-size: 2.6em; }
+
+.reveal h2 {
+  font-size: 2.2em; }
+
+.reveal h3 {
+  font-size: 1.7em; }
+
+.reveal h4 {
+  font-size: 1.4em; }
+
+.reveal h1 {
+  text-shadow: none; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3; }
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: "Fira Code", monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+
+.reveal code {
+  font-family: "Fira Code", monospace;
+  text-transform: none; }
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+  border: 1px solid; }
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller; }
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+.reveal img {
+  margin: 20px 0; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #7BAB8B;
+  text-decoration: none;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: #aac9b4;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #558565; }
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid #0f0f0f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal a .r-frame {
+  transition: all .15s linear; }
+
+.reveal a:hover .r-frame {
+  border-color: #7BAB8B;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: #7BAB8B; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #7BAB8B; }
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: #fff; } }
+
+.reveal .progress {
+  z-index: 1000;
+  color: #7BAB8B; }

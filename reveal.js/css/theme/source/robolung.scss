@@ -1,0 +1,226 @@
+/**
+
+  [ robot-lung ]
+  Adapted by Simon Schug
+  A hot pink theme for Reveal.js with Roboto fonts and a colorful border.
+  By Josh Dzielak, https://dzello.com/, License MIT
+
+  The bold border is optional and requires some HTML. To use it:
+
+  1. Add 4 divs to your HTML page:
+    <div class="line top"></div>
+    <div class="line bottom"></div>
+    <div class="line left"></div>
+    <div class="line right"></div>
+
+  2. Set { margin: 0.2 } in the Reveal.js initializer to make sure
+  your presentation content doesn't collide with the frame.
+
+  Like the theme but don't like the colors? Don't fret. Just change
+  $borderColor and/or $linkColor below to something else and rebuild.
+
+  Or if you don't want to rebuild the theme just override the .line background
+  property with some CSS:
+
+  .line {
+    background: <new-color>;
+  }
+
+*/
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+
+
+
+// store hot pink in a variable
+$hotPink: #7BAB8B;
+$secondaryColor: #8b7bab;
+// the color of the thick border surrounding the presention
+$borderColor: $hotPink;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+$mainColor: #0f0f0f;
+$headingColor: #2a2a2a;
+
+$mainFontSize: 30px;
+
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,700,800);
+$mainFont: 'Nunito Sans', serif;
+$mainFontWeight: 200;
+$headingFont: 'Nunito Sans', sans-serif;
+$headingFontWeight: 800;
+
+// @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
+// @import url(https://fonts.googleapis.com/css?family=Roboto:700);
+// $mainFont: 'Roboto Slab', serif;
+// $headingFont: 'Roboto', sans-serif;
+// $headingFontWeight: 700;
+
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:500);
+$codeFont: 'Fira Code', monospace;
+
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$linkColor: $hotPink;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.6em;
+$heading2Size: 2.2em;
+$heading3Size: 1.7em;
+$heading4Size: 1.4em;
+
+section.has-light-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #141414;
+  }
+}
+
+// .reveal strong,
+// .reveal b {
+// 	color: $hotPink;
+// }
+
+// .reveal ul {
+//   list-style: none !important; /* Remove list bullets */
+//   padding: 0 !important;
+//   margin: 0 !important;
+// }
+
+// .reveal li {
+//   padding-left: 1em;
+//   text-indent: -.7em;
+// }
+
+// .reveal li:before {
+//   content: "•"; /* Insert content that looks like bullets */
+//   padding-right: 0.5em;
+//   color: $hotPink; /* Or a color you prefer */
+// }
+
+.reveal blockquote {
+  text-align: left;
+  font-size: 0.9em;
+	color: #000;
+	width: 90% !important;
+  margin: 0px auto;
+  padding-top: 0px !important;
+  padding-right: 10px !important;
+  padding-bottom: 0px !important;
+  padding-left: 20px !important;
+	font-style: normal !important;
+	background: $hotPink !important;
+}
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none;
+  /* CUSTOMIZED */
+  padding: 2px;
+  color: $hotPink;
+  background: rgba(21.2, 21.2, 21.2, 0.8);
+}
+
+.reveal pre code {
+	font-size: 1.3em;
+	line-height: 1.5em;
+	padding: 20px !important; 
+}
+
+/* Create a box around iframes */
+.reveal iframe {
+  border: 4px solid #7BAB8B;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal .controls {
+  right: 50px;
+  bottom: 50px;
+}
+
+.reveal table {
+  padding-top: 20px;
+}
+
+.reveal table th,
+.reveal table td {
+  background-color: #7BAB8B;
+  font-size: 0.7em;
+}
+
+.reveal textarea {
+  color: #000;
+  font-family: monospace;
+  font-size: 0.7em;
+  margin: 30px auto;
+}
+
+.line {
+  content: '';
+  position: fixed;
+  background: $borderColor;
+  z-index: 105;
+  &.top {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    @media (max-width: 840px) {
+      height: 15px;
+    }
+  }
+  &.bottom {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    @media (max-width: 840px) {
+      height: 15px;
+    }
+  }
+  &.left {
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 200%;
+    @media (max-width: 840px) {
+      width: 15px;
+    }
+  }
+  &.right {
+    left: auto;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 200%;
+    @media (max-width: 840px) {
+      width: 15px;
+    }
+  }
+}
+
+// don't show the colored frame against dark backgrounds
+.reveal.has-dark-background {
+  .line {
+    display: none;
+  }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal .progress {
+  z-index: 1000;
+  color: #7BAB8B;
+}
+
+

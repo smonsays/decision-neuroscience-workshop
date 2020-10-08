@@ -1,0 +1,11 @@
+# Blacklist files/folders in same directory as the .gitignore file
+/*
+
+# Whitelist some files in the root directory
+!.gitignore
+!README.md
+!LICENSE
+!decision-workshop_20201006.html
+
+# Whitelist all folders
+!*/
