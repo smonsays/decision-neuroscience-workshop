@@ -5,7 +5,7 @@
 !.gitignore
 !README.md
 !LICENSE
-!decision-workshop_20201006.html
+!index.html
 
 # Whitelist all folders
 !*/
